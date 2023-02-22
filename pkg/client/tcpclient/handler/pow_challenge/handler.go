@@ -31,6 +31,7 @@ func HandleResponse(conn net.Conn, serverResponse []byte, challenge *entity.Chal
 
 	msgT, msgV := GetMessage(serverResponse)
 
+	//custom tcp message protocol
 	switch msgT {
 	case protocol.Challenge:
 		challenge.Challenge = msgV
